@@ -1,10 +1,12 @@
 {
-  "name": "GamePot",
+  "name": "gamepot",
   "version": "1.0.0",
   "description": "\"# GamePot\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./index.js"
+	 "ui": "browser-sync start --proxy=localhost:8000 --files='**/*.css, **/*.pug, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
+  },
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/VenzlMa/GamePot/issues"
   },
-  "homepage": "https://github.com/VenzlMa/GamePot#readme"
+  "homepage": "https://github.com/VenzlMa/GamePot#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "nodemon": "^2.0.3"
+  }
 }
