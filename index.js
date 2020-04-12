@@ -1,14 +1,37 @@
 // index.js
 
+/**
+ * Required External Modules
+ */
+
 // Import necessary packages
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 
-// create and configure the express app
-const PORT = process.env.PORT || 3000;
-const app = express();
+/**
+ * App Variables
+ */
 
-app.use(bodyParser.json());
+// create and configure the express app
+const app = express();
+const PORT = process.env.PORT || 8000;
+
+
+/**
+ *  App Configuration
+ */
+
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+app.use(express.static(path.join(__dirname, "public")));
+
 
 // Database Connection Info
 const MongoClient = require("mongodb").MongoClient;
@@ -20,7 +43,7 @@ let db;
 
 // The index route
 app.get("/", function(req, res) {
-   res.send("Game Leaderboard API!");
+   res.render("index", { title: "Home" });
 });
 
 // Connect to the database with [url]
@@ -55,8 +78,9 @@ app.post("/players", async function(req, res) {
    } else {
        // create the new player
        await db.collection("players").insertOne({ username, credits });
-       console.log(`Created Player ${username}`);
-       res.send({ status: true, msg: "player created-> " + username + ", credits:" + credits});
+       //console.log(`Created Player ${username}`);
+       //res.send({ status: true, msg: "player created-> " + username + ", credits:" + credits});
+	   res.render("players", { title: "Home" })
    }
 });
 
