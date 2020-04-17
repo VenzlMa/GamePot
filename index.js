@@ -38,7 +38,7 @@ const MongoClient = require("mongodb").MongoClient;
 
 // the URL we copied from earlier. Replace username and password with what you created in the initial steps
 const url = 
-"mongodb+srv://VenzlMa:12345$VenzlMa$@gamepot-zzavq.mongodb.net/test?retryWrites=true&w=majority"
+"mongodb+srv://VenzlMa:x2345678@gamepot-zzavq.mongodb.net/test?retryWrites=true&w=majority"
 let db;
 
 // The index route
