@@ -48,20 +48,77 @@ app.get("/", function(req, res) {
 
 // Connect to the database with [url]
 (async () => {
-   let client = await MongoClient.connect(
+   let client = 
+   await MongoClient.connect(
        url,
        { useNewUrlParser: true }
+	   
+	  
    );
 
    db = client.db("GamePot");
 
    app.listen(PORT, async function() {
        console.log(`Listening on Port ${PORT}`);
+	   
        if (db) {
            console.log("Database is Connected!");
+		    await findPlayers(client);
+		    await monitorListingsUsingEventEmitter(client);
        }
    });
 })();
+
+
+//other way for fetching data from mongo db with cursors
+async function findPlayers(client) {
+    // See https://mongodb.github.io/node-mongodb-native/3.3/api/Collection.html#find for the find() docs
+    const cursor = client.db("GamePot").collection("players").find({});
+    // Store the results in an array. If you will have many customers, you may want to iterate
+    // this cursor instead of sending the results to an array. You can use Cursor's forEach() 
+    // to do the iterating: https://mongodb.github.io/node-mongodb-native/3.3/api/Cursor.html#forEach
+    const results = await cursor.toArray();
+    // Process the results
+    if (results.length > 0) {
+        results.forEach((result, i) => {
+
+            console.log(result);
+            // Here you could build your html or put the results in some other data structure you want to work with
+        });
+    } else {
+        console.log(`No players found`);
+    }
+}
+
+
+//ChangeStream
+// tutorial: https://developer.mongodb.com/quickstart/nodejs-change-streams-triggers
+function closeChangeStream(timeInMs = 6000000, changeStream) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Closing the change stream");
+            changeStream.close();
+            resolve();
+        }, timeInMs)
+    })
+};
+
+async function monitorListingsUsingEventEmitter(client, timeInMs = 6000000, pipeline = []){
+   
+   const collection = client.db("GamePot").collection("players");
+   const changeStream = collection.watch(pipeline);
+   
+   //log every change
+   changeStream.on('change', (next) => {
+     console.log(next);
+});
+
+  await closeChangeStream(timeInMs, changeStream);
+   
+}
+
+
+
 
 // Route to create new player
 app.post("/players", async function(req, res) {
