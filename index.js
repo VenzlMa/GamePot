@@ -28,9 +28,18 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 })); 
 
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "html");
-app.use(express.static(path.join(__dirname, "public")));
+//app.set("views", path.join(__dirname, "views"));
+//app.set("view engine", "html");
+//app.use(express.static(path.join(__dirname, "public")));
+
+var cons = require('consolidate');
+
+// view engine setup
+app.engine('html', cons.swig)
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+
+
 
 
 // Database Connection Info
@@ -43,7 +52,7 @@ let db;
 
 // The index route
 app.get("/", function(req, res) {
-   res.render("index.html", { title: "Home" }); // start website
+   res.render("index", { title: "Home" });
 });
 
 // Connect to the database with [url]
