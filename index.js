@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 
 app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
+app.set("view engine", "html");
 app.use(express.static(path.join(__dirname, "public")));
 
 
@@ -43,7 +43,7 @@ let db;
 
 // The index route
 app.get("/", function(req, res) {
-   res.render("index", { title: "Home" });
+   res.render("index.html", { title: "Home" }); // start website
 });
 
 // Connect to the database with [url]

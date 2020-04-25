@@ -5,27 +5,32 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./index.js",
-    "ui": "browser-sync start --proxy=localhost:8000 --files='**/*.css, **/*.pug, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
+    "ui": "browser-sync start --proxy=localhost:8000 --files='**/*.css, **/*.html, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VenzlMa/GamePot.git"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/VenzlMa/GamePot/issues"
   },
+
   "homepage": "https://github.com/VenzlMa/GamePot#readme",
+
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "mongodb": "^3.5.5",
-    "pug": "^2.0.4"
+    "mongodb": "^3.5.5"
+
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "nodemon": "^2.0.3"
   }
 }
+
