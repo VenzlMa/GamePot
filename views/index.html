@@ -2,73 +2,44 @@
 <html>
 
 <head>
-    <title>Your Game Pot</title>
+    <title></title>
     <link rel="stylesheet" type="text/css" href="/stylesAG.css">
     <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
-    <script src="scripts.js" async></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- for responsive Design -->
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> 	</script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-<section>
-    <div class="container">
+<div class="text-center">
+    <form class="form-signin" method="POST" action="/players">
+        <div id="error">
+			if error ?!?
+		</div>
+    </form>
+</div>
+<br>
+<h1 class="h3 mb-3 font-weight-normal">Lets Bet</h1>
 
-        <div class="heading">
-            Pot:
-            <t id="gamePot">0</t>
-        </div>
+<div class="test">
+<label class="sr-only" for="username">Player</label>
+<input class="form-control" type="String" name="username" id="inputUsername" placeholder="Username" required="required" autofocus="autofocus" />
+<br>
+<label class="sr-only" for="credits">Credits</label>
+<input class="form-control" type="int" name="credits" id="inputCredits" placeholder="Credits" required="required" />
+</div>
+<!--div class="checkbox mb-3">
+<label>
+<input type="checkbox" value="remember-me"/>
+<span>Remember me</span>
+</label>
+</div-->
+<br>
+<button class="btn btn-lg btn-primary btn-block" type="submit">BET!</button>
 
-        <form class = "radio" id= "Split" action=""> <!-- Player auswählen und Pot vergeben -->
-            <!-- TuDu lables ? -->
-            <input class="radio" type="radio" name="player" value = 1 id="radioP1"> Player 1 <br>
-            <input class="radio" type="radio" name="player" value = 2 id="radioP2"> Player 2 <br>
-            <input class="radio" type="radio" name="player" value = 3 id="radioP3"> Player 3 <br>
-            <input class="radio" type="radio" name="player" value = 4 id="radioP4"> Player 4 <br>
-            <button id="splitPotB">Split!</button>
-        </form>
-
-        <div class="card-wrapper"> <!-- alle Player in diesem Container-->
-
-            <div class="card" id=p1>
-                <h1>Player 1</h1>
-                <p id="wallet1"> </p>
-                <form id= "Set1" action="">
-                    <input type="text" placeholder="€€€" id="gives1"/>
-                    <button id="setB1">Set</button>
-                </form>
-            </div>
-
-            <div class="card" id=p2>
-                <h1>Player 2</h1>
-                <p id="wallet2"> </p>
-                <form id= "Set2" action="">
-                    <input type="text" placeholder="€€€" id="gives2"/>
-                    <button id="setB2">Set</button>
-                </form>
-            </div>
-
-            <div class="card" id=p3>
-                <h1>Player 3</h1>
-                <p id="wallet3"> </p>
-                <form id= "Set3" action="">
-                    <input type="text" placeholder="€€€" id="gives3"/>
-                    <button id="setB3">Set</button>
-                </form>
-            </div>
-
-            <div class="card" id=p4>
-                <h1>Player 4</h1>
-                <p id="wallet4"> </p>
-                <form id= "Set4" action="">
-                    <input type="text" placeholder="€€€" id="gives4"/>
-                    <button id="setB4">Set</button>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</section>
 
 </body>
+
 </html>
