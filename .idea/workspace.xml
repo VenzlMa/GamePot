@@ -1,181 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="73b50400-f42a-42a6-bae2-6270229b078d" name="Default Changelist" comment="" />
+    <list default="true" id="812ea80b-40ca-40ad-9396-2f90f9677cda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/stylesAG.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/consolidate/History.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/consolidate/History.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/consolidate/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/consolidate/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/consolidate/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/consolidate/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/consolidate/lib/consolidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/consolidate/lib/consolidate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/consolidate/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/consolidate/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/styleMV.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/players.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1aoktRaI3VFUHaACh9Jjx128R6T" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1b4Og1lzAcHqFGTskwbQgn50SVa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../App" />
   </component>
-  <component name="RunManager">
-    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/index.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\views" />
+      <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\public\stylesheets" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <item itemvalue="Node.js.index.js" />
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
-    </recent_temporary>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="73b50400-f42a-42a6-bae2-6270229b078d" name="Default Changelist" comment="" />
-      <created>1587409548124</created>
+      <changelist id="812ea80b-40ca-40ad-9396-2f90f9677cda" name="Default Changelist" comment="" />
+      <created>1587888007963</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1587409548124</updated>
-      <workItem from="1587409554366" duration="266000" />
-      <workItem from="1587410120752" duration="16000" />
-      <workItem from="1587410657015" duration="144000" />
-      <workItem from="1587543185494" duration="1793000" />
-      <workItem from="1587545127506" duration="6350000" />
-      <workItem from="1587566081251" duration="1683000" />
-      <workItem from="1587568702667" duration="397000" />
-      <workItem from="1587569112954" duration="1691000" />
-      <workItem from="1587570946719" duration="125000" />
-      <workItem from="1587571118836" duration="384000" />
-      <workItem from="1587571514088" duration="1459000" />
-      <workItem from="1587573534679" duration="511000" />
-      <workItem from="1587574570210" duration="1560000" />
-      <workItem from="1587745371302" duration="410000" />
-      <workItem from="1587745801415" duration="4924000" />
+      <updated>1587888007963</updated>
+      <workItem from="1587888013048" duration="2868000" />
+      <workItem from="1587891396320" duration="609000" />
+      <workItem from="1587902289342" duration="541000" />
     </task>
-    <task id="LOCAL-00001" summary="Test der Konvertierung von HTML in PUG (inkl. CSS)">
-      <created>1587574707130</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1587574707130</updated>
-    </task>
-    <task id="LOCAL-00002" summary="HTML in Verbindung mit Express">
-      <created>1587750908093</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1587750908093</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.pug" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test der Konvertierung von HTML in PUG (inkl. CSS)" />
-    <MESSAGE value="HTML in Verbindung mit Express" />
-    <option name="LAST_COMMIT_MESSAGE" value="HTML in Verbindung mit Express" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1368" y="163" key="#Plugins" timestamp="1587746521300">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1587891408478">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1368" y="163" key="#Plugins/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587746521300" />
-    <state width="1493" height="363" key="GridCell.Tab.0.bottom" timestamp="1587748993785">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="740" y="279" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587891408478" />
+    <state x="672" y="238" key="MultipleFileMergeDialog" timestamp="1587829704414">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="384" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587746900443" />
-    <state width="1493" height="363" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1587748993785" />
-    <state width="1493" height="363" key="GridCell.Tab.0.center" timestamp="1587748993785">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="672" y="238" key="MultipleFileMergeDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587829704414" />
+    <state x="234" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587890457381">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="384" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587746900443" />
-    <state width="1493" height="363" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1587748993785" />
-    <state width="1493" height="363" key="GridCell.Tab.0.left" timestamp="1587748993785">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="234" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587890457381" />
+    <state x="684" y="324" key="git4idea.merge.GitPullDialog" timestamp="1587829683793">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="384" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587746900443" />
-    <state width="1493" height="363" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1587748993785" />
-    <state width="1493" height="363" key="GridCell.Tab.0.right" timestamp="1587748993785">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="684" y="324" key="git4idea.merge.GitPullDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587829683793" />
+    <state x="694" y="430" key="git4idea.ui.GitStashDialog" timestamp="1587829660618">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="384" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587746900443" />
-    <state width="1493" height="363" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1587748993785" />
-    <state x="-1459" y="165" key="SettingsEditor" timestamp="1587564577060">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1459" y="165" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587564577060" />
-    <state x="-1368" y="255" key="Vcs.Push.Dialog.v2" timestamp="1587574797274">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1368" y="255" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587574797274" />
-    <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587545330688">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587545330688" />
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1587747273186">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587747273186" />
+    <state x="694" y="430" key="git4idea.ui.GitStashDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587829660618" />
   </component>
 </project>

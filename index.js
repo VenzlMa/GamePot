@@ -39,7 +39,7 @@ app.engine('html', cons.swig)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-
+app.use(express.static(__dirname + '/views'));
 
 
 // Database Connection Info
