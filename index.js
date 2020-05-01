@@ -98,7 +98,7 @@ async function findPlayers(client) {
 
 //ChangeStream
 // tutorial: https://developer.mongodb.com/quickstart/nodejs-change-streams-triggers
-function closeChangeStream(timeInMs, changeStream) {
+function closeChangeStream(timeInMs = 6000000, changeStream) {
     return new Promise((resolve) => {
         setTimeout(() => {
             console.log("Closing the change stream");
@@ -188,20 +188,18 @@ app.get("/players", async function(req, res) {
    // retrieve ‘lim’ from the query string info
    
    try {
-   let { lim } = req.query;
-   console.log(lim);
+   let lim  = parseInt(req.query);
    db.collection("players")
        .find()
        // -1 is for descending and 1 is for ascending
        .sort({ credits: -1 })
        // Show only [lim] players
-	   .limit(parseInt(lim))
-       .toArray(function(err, result) {
-           if (err)
-               res.send({ status: false, msg: "failed to retrieve players" });
-           console.log(Array.from(result));
-           res.send({ status: true, msg: result });
-       });
+	   .limit(lim)
+       .toArray(function(error,result) {
+		 
+            console.log(Array.from(result)); 
+			res.send({ status: true, msg: result });
+		});
 	} catch (error) {
       
       return res.send(error.message);
