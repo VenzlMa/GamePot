@@ -31,35 +31,29 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-<<<<<<< HEAD
+
 //app.set("views", path.join(__dirname, "views"));
 //app.set("view engine", "html");
 //app.use(express.static(path.join(__dirname, "public")));
 
 
 var cons = require('consolidate');
-=======
+
 // setup css
 app.use(express.static('public'));
->>>>>>> parent of c7358a6... commit new
 
-
-<<<<<<< HEAD
-=======
->>>>>>> parent of 6a0f2d9... frontend mit backend verbunden :)
 
 
 // view engine setup
-app.engine('html', cons.swig)
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
+//app.engine('html', cons.swig)
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'html');
 
-=======
+
 // The index route
 app.get("/", (req, res) => res.render("home"));
->>>>>>> parent of c7358a6... commit new
 
-var cons = require('consolidate');
+
 
 
 // Database Connection Info
