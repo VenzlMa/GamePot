@@ -30,10 +30,33 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 // Set up handelbars
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+<<<<<<< HEAD
+=======
+
+>>>>>>> AntoniaG
 
 // setup css
 app.use(express.static('public'));
 
+<<<<<<< HEAD
+=======
+
+var cons = require('consolidate');
+
+// setup css
+app.use(express.static('public'));
+
+
+
+// view engine setup
+//app.engine('html', cons.swig)
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'html');
+
+
+// The index route
+app.get("/", (req, res) => res.render("home"));
+>>>>>>> AntoniaG
 
 // The index route
 app.get("/", (req, res) => res.render("home"));
