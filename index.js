@@ -31,6 +31,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 //app.set("views", path.join(__dirname, "views"));
 //app.set("view engine", "html");
 //app.use(express.static(path.join(__dirname, "public")));
+<<<<<<< HEAD
 
 var cons = require('consolidate');
 
@@ -39,8 +40,14 @@ app.engine('html', cons.swig)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
+=======
+>>>>>>> parent of 6a0f2d9... frontend mit backend verbunden :)
 
 
+// view engine setup
+app.engine('html', cons.swig)
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
 
 
 
