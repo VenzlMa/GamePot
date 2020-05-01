@@ -23,6 +23,7 @@
 <<<<<<< HEAD
     <list default="true" id="812ea80b-40ca-40ad-9396-2f90f9677cda" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <change afterPath="$PROJECT_DIR$/views/home.handlebars" afterDir="false" />
 >>>>>>> parent of f97bef7... frontend mit backend verbunden2
@@ -228,6 +229,12 @@
       <change beforePath="$PROJECT_DIR$/views/playersAG.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/playersAG.handlebars" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/stylesAG.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesAG.css" afterDir="false" />
 >>>>>>> parent of f97bef7... frontend mit backend verbunden2
+=======
+      <change afterPath="$PROJECT_DIR$/public/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/playersAG.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/playersAG.handlebars" afterDir="false" />
+>>>>>>> parent of c7358a6... commit new
     </list>
 =======
     <list default="true" id="73b50400-f42a-42a6-bae2-6270229b078d" name="Default Changelist" comment="" />
@@ -274,19 +281,31 @@
     <property name="aspect.path.notification.shown" value="true" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
 =======
     <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+>>>>>>> parent of c7358a6... commit new
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+<<<<<<< HEAD
+=======
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\public" />
+      <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\views" />
+    </key>
+>>>>>>> parent of c7358a6... commit new
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\public" />
       <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\views\layouts" />
     </key>
+<<<<<<< HEAD
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\views" />
     </key>
@@ -297,12 +316,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
 >>>>>>> parent of 6a0f2d9... frontend mit backend verbunden :)
+=======
+  </component>
+>>>>>>> parent of c7358a6... commit new
   <component name="RunManager">
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.index.js" />
         <item itemvalue="Node.js.index.js" />
       </list>
     </recent_temporary>
@@ -312,7 +335,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="73b50400-f42a-42a6-bae2-6270229b078d" name="Default Changelist" comment="" />
+      <changelist id="812ea80b-40ca-40ad-9396-2f90f9677cda" name="Default Changelist" comment="" />
       <created>1587409548124</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -334,15 +357,23 @@
       <workItem from="1587745801415" duration="4924000" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of c7358a6... commit new
       <workItem from="1587910745484" duration="22000" />
       <workItem from="1587978759244" duration="946000" />
       <workItem from="1588262940526" duration="424000" />
       <workItem from="1588263382033" duration="783000" />
+<<<<<<< HEAD
       <workItem from="1588264183052" duration="5404000" />
 >>>>>>> parent of f97bef7... frontend mit backend verbunden2
 =======
 >>>>>>> parent of 6a0f2d9... frontend mit backend verbunden :)
+=======
+      <workItem from="1588264183052" duration="5660000" />
+      <workItem from="1588319918719" duration="1695000" />
+>>>>>>> parent of c7358a6... commit new
     </task>
     <task id="LOCAL-00001" summary="Test der Konvertierung von HTML in PUG (inkl. CSS)">
       <created>1587574707130</created>
@@ -360,8 +391,11 @@
     </task>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="localTasksCounter" value="3" />
 =======
+=======
+>>>>>>> parent of c7358a6... commit new
     <task id="LOCAL-00003" summary="aktueller Stand">
       <created>1587910697069</created>
       <option name="number" value="00003" />
@@ -369,15 +403,26 @@
       <option name="project" value="LOCAL" />
       <updated>1587910697069</updated>
     </task>
+<<<<<<< HEAD
     <option name="localTasksCounter" value="4" />
 >>>>>>> parent of f97bef7... frontend mit backend verbunden2
 =======
     <option name="localTasksCounter" value="3" />
 >>>>>>> parent of 6a0f2d9... frontend mit backend verbunden :)
+=======
+    <task id="LOCAL-00004" summary="frontend mit backend verbunden :)">
+      <created>1588269646716</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588269646716</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+>>>>>>> parent of c7358a6... commit new
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.pug" />
@@ -399,6 +444,7 @@
     <MESSAGE value="HTML in Verbindung mit Express" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="LAST_COMMIT_MESSAGE" value="HTML in Verbindung mit Express" />
 =======
     <MESSAGE value="aktueller Stand" />
@@ -407,6 +453,11 @@
 =======
     <option name="LAST_COMMIT_MESSAGE" value="HTML in Verbindung mit Express" />
 >>>>>>> parent of 6a0f2d9... frontend mit backend verbunden :)
+=======
+    <MESSAGE value="aktueller Stand" />
+    <MESSAGE value="frontend mit backend verbunden :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend mit backend verbunden :)" />
+>>>>>>> parent of c7358a6... commit new
   </component>
   <component name="WindowStateProjectService">
     <state x="-1368" y="163" key="#Plugins" timestamp="1587746521300">
@@ -415,22 +466,35 @@
     <state x="-1368" y="163" key="#Plugins/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587746521300" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of c7358a6... commit new
     <state x="337" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587909782696">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="337" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587909782696" />
+<<<<<<< HEAD
     <state x="191" y="123" key="CommitChangelistDialog2" timestamp="1587910696282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="191" y="123" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587910696282" />
+=======
+    <state x="191" y="123" key="CommitChangelistDialog2" timestamp="1588269644577">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="191" y="123" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588269644577" />
+>>>>>>> parent of c7358a6... commit new
     <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1587978935344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587978935344" />
+<<<<<<< HEAD
 >>>>>>> parent of f97bef7... frontend mit backend verbunden2
 =======
 >>>>>>> parent of 6a0f2d9... frontend mit backend verbunden :)
+=======
+>>>>>>> parent of c7358a6... commit new
     <state width="1493" height="363" key="GridCell.Tab.0.bottom" timestamp="1587748993785">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -455,14 +519,24 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1459" y="165" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587564577060" />
-    <state x="-1368" y="255" key="Vcs.Push.Dialog.v2" timestamp="1587574797274">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1588320151331">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588320151331" />
     <state x="-1368" y="255" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587574797274" />
-    <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587545330688">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587907902409">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587907902409" />
     <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587545330688" />
+    <state x="291" y="240" key="git4idea.branch.GitSmartOperationDialog" timestamp="1587907864597">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="291" y="240" key="git4idea.branch.GitSmartOperationDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587907864597" />
+    <state x="278" y="328" key="git4idea.merge.GitPullDialog" timestamp="1587907910677">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="278" y="328" key="git4idea.merge.GitPullDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587907910677" />
     <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1587747273186">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
