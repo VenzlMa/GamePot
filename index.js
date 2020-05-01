@@ -30,16 +30,6 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 // Set up handelbars
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
-<<<<<<< HEAD
-=======
-
->>>>>>> AntoniaG
-
-// setup css
-app.use(express.static('public'));
-
-<<<<<<< HEAD
-=======
 
 var cons = require('consolidate');
 
@@ -56,7 +46,7 @@ app.use(express.static('public'));
 
 // The index route
 app.get("/", (req, res) => res.render("home"));
->>>>>>> AntoniaG
+
 
 // The index route
 app.get("/", (req, res) => res.render("home"));
@@ -227,6 +217,6 @@ app.get("/players", async function(req, res) {
       
       return res.send(error.message);
     }
-	
 });
+
 
