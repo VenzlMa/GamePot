@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 //app.set("views", path.join(__dirname, "views"));
 //app.set("view engine", "html");
 //app.use(express.static(path.join(__dirname, "public")));
-<<<<<<< HEAD
+
 
 var cons = require('consolidate');
 
