@@ -19,6 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="812ea80b-40ca-40ad-9396-2f90f9677cda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
@@ -64,6 +65,9 @@
       <change beforePath="$PROJECT_DIR$/views/players.handlebars" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/playersAG.handlebars" beforeDir="false" />
     </list>
+=======
+    <list default="true" id="73b50400-f42a-42a6-bae2-6270229b078d" name="Default Changelist" comment="" />
+>>>>>>> parent of 6a0f2d9... frontend mit backend verbunden :)
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,18 +117,6 @@
         <item itemvalue="Node.js.index.js" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -180,13 +172,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test der Konvertierung von HTML in PUG (inkl. CSS)" />
