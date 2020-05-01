@@ -9,8 +9,6 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 
-const exphbs = require('express-handlebars');
-
 /**
  * App Variables
  */
@@ -19,26 +17,29 @@ const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+
 /**
  *  App Configuration
  */
+
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
-// Set up handelbars
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
 
-// setup css
-app.use(express.static('public'));
-
-
-// The index route
-app.get("/", (req, res) => res.render("home"));
+//app.set("views", path.join(__dirname, "views"));
+//app.set("view engine", "html");
+//app.use(express.static(path.join(__dirname, "public")));
 
 var cons = require('consolidate');
+
+// view engine setup
+app.engine('html', cons.swig)
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+
+
 
 
 // Database Connection Info
@@ -49,7 +50,10 @@ const url =
 "mongodb+srv://VenzlMa:x2345678@gamepot-zzavq.mongodb.net/test?retryWrites=true&w=majority"
 let db;
 
-
+// The index route
+app.get("/", function(req, res) {
+   res.render("index", { title: "Home" });
+});
 
 // Connect to the database with [url]
 (async () => {
@@ -85,7 +89,7 @@ app.post("/players", async function(req, res) {
        await db.collection("players").insertOne({ username, credits });
        //console.log(`Created Player ${username}`);
        //res.send({ status: true, msg: "player created-> " + username + ", credits:" + credits});
-	   res.render("playersAG", { title: "Home" })
+	   res.render("players", { title: "Home" })
    }
 });
 

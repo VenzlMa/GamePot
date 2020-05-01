@@ -20,10 +20,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="812ea80b-40ca-40ad-9396-2f90f9677cda" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/playersAG.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/playersAG.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/uglifyjs" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/uglifyjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/uglifyjs.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/uglifyjs.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/amdefine/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/amdefine/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/optimist/node_modules/minimist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/optimist/node_modules/minimist/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/optimist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/optimist/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/source-map/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/source-map/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/source-map/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/bin/uglifyjs" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/bin/uglifyjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/ast.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/ast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/compress.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/compress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/mozilla-ast.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/mozilla-ast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/output.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/output.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/propmangle.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/propmangle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/scope.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/scope.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/sourcemap.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/sourcemap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/transform.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/transform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/tools/domprops.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/tools/domprops.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/tools/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/tools/node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/tools/props.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/tools/props.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-to-browserify/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-to-browserify/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/window-size/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/window-size/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wordwrap/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/wordwrap/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wordwrap/test/break.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/wordwrap/test/break.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wordwrap/test/wrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/wordwrap/test/wrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/yargs/node_modules/camelcase/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/yargs/node_modules/camelcase/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/yargs/node_modules/wordwrap/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/yargs/node_modules/wordwrap/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/yargs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/yargs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesAG.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.handlebars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/main.handlebars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/players.handlebars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/playersAG.handlebars" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,19 +101,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\public" />
-      <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\views" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\public" />
-      <recent name="C:\Users\Antonia\Desktop\Antonia\Studium\Sem9\CEKT\GamePot\views\layouts" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/index.js" working-dir="$PROJECT_DIR$">
@@ -82,7 +110,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.index.js" />
         <item itemvalue="Node.js.index.js" />
       </list>
     </recent_temporary>
@@ -104,7 +131,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="812ea80b-40ca-40ad-9396-2f90f9677cda" name="Default Changelist" comment="" />
+      <changelist id="73b50400-f42a-42a6-bae2-6270229b078d" name="Default Changelist" comment="" />
       <created>1587409548124</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -124,12 +151,6 @@
       <workItem from="1587574570210" duration="1560000" />
       <workItem from="1587745371302" duration="410000" />
       <workItem from="1587745801415" duration="4924000" />
-      <workItem from="1587910745484" duration="22000" />
-      <workItem from="1587978759244" duration="946000" />
-      <workItem from="1588262940526" duration="424000" />
-      <workItem from="1588263382033" duration="783000" />
-      <workItem from="1588264183052" duration="5660000" />
-      <workItem from="1588319918719" duration="1695000" />
     </task>
     <task id="LOCAL-00001" summary="Test der Konvertierung von HTML in PUG (inkl. CSS)">
       <created>1587574707130</created>
@@ -145,25 +166,11 @@
       <option name="project" value="LOCAL" />
       <updated>1587750908093</updated>
     </task>
-    <task id="LOCAL-00003" summary="aktueller Stand">
-      <created>1587910697069</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1587910697069</updated>
-    </task>
-    <task id="LOCAL-00004" summary="frontend mit backend verbunden :)">
-      <created>1588269646716</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1588269646716</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.pug" />
@@ -184,27 +191,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test der Konvertierung von HTML in PUG (inkl. CSS)" />
     <MESSAGE value="HTML in Verbindung mit Express" />
-    <MESSAGE value="aktueller Stand" />
-    <MESSAGE value="frontend mit backend verbunden :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend mit backend verbunden :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="HTML in Verbindung mit Express" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1368" y="163" key="#Plugins" timestamp="1587746521300">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1368" y="163" key="#Plugins/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587746521300" />
-    <state x="337" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587909782696">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="337" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587909782696" />
-    <state x="191" y="123" key="CommitChangelistDialog2" timestamp="1588269644577">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="191" y="123" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588269644577" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1587978935344">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587978935344" />
     <state width="1493" height="363" key="GridCell.Tab.0.bottom" timestamp="1587748993785">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -229,24 +222,14 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1459" y="165" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587564577060" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1588320151331">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1368" y="255" key="Vcs.Push.Dialog.v2" timestamp="1587574797274">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588320151331" />
     <state x="-1368" y="255" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587574797274" />
-    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587907902409">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587545330688">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587907902409" />
     <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587545330688" />
-    <state x="291" y="240" key="git4idea.branch.GitSmartOperationDialog" timestamp="1587907864597">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="291" y="240" key="git4idea.branch.GitSmartOperationDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587907864597" />
-    <state x="278" y="328" key="git4idea.merge.GitPullDialog" timestamp="1587907910677">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="278" y="328" key="git4idea.merge.GitPullDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587907910677" />
     <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1587747273186">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
