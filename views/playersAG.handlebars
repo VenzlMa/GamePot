@@ -3,7 +3,7 @@
 
 <head>
     <title>Your Game Pot</title>
-    <link rel="stylesheet" type="text/css" href="/stylesAG.css">
+    <link rel="stylesheet"  href="stylesAG.css">
     <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
     <script src="scripts.js" async></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -14,55 +14,47 @@
 <section>
     <div class="container">
 
+        <div class="test">
+
+            <form>
+                <input type="text" placeholder="username" id="addID"/>
+                <button class="test btn" id="addPlayerB">addPlayer</button>
+            </form>
+
+            <form>
+                <input type="text" placeholder="username" id="removeID"/>
+                <button class="test btn" id="removePlayerB">removePlayer</button>
+            </form>
+
+            <form>
+                <input type="text" placeholder="€€€" id="startingW"/>
+                <button class="test btn" id="setWalletB">setWallets!</button>
+            </form>
+
+            <button class="test btn" id="changeColor">changeColor</button>
+
+
+        </div>
+
         <div class="heading">
             Pot:
             <t id="gamePot">0</t>
         </div>
 
         <form class = "radio" id= "Split" action=""> <!-- Player auswählen und Pot vergeben -->
-            <!-- TuDu lables ? -->
+            <!-- TuDu lables -->
             <input class="radio" type="radio" name="player" value = 1 id="radioP1"> Player 1 <br>
-            <input class="radio" type="radio" name="player" value = 2 id="radioP2"> Player 2 <br>
-            <input class="radio" type="radio" name="player" value = 3 id="radioP3"> Player 3 <br>
-            <input class="radio" type="radio" name="player" value = 4 id="radioP4"> Player 4 <br>
             <button id="splitPotB">Split!</button>
         </form>
 
         <div class="card-wrapper"> <!-- alle Player in diesem Container-->
 
-            <div class="card" id=p1>
+            <div class="card" id="masterP">
                 <h1>Player 1</h1>
-                <p id="wallet1"> </p>
-                <form id= "Set1" action="">
-                    <input type="text" placeholder="€€€" id="gives1"/>
-                    <button id="setB1">Set</button>
-                </form>
-            </div>
-
-            <div class="card" id=p2>
-                <h1>Player 2</h1>
-                <p id="wallet2"> </p>
-                <form id= "Set2" action="">
-                    <input type="text" placeholder="€€€" id="gives2"/>
-                    <button id="setB2">Set</button>
-                </form>
-            </div>
-
-            <div class="card" id=p3>
-                <h1>Player 3</h1>
-                <p id="wallet3"> </p>
-                <form id= "Set3" action="">
-                    <input type="text" placeholder="€€€" id="gives3"/>
-                    <button id="setB3">Set</button>
-                </form>
-            </div>
-
-            <div class="card" id=p4>
-                <h1>Player 4</h1>
-                <p id="wallet4"> </p>
-                <form id= "Set4" action="">
-                    <input type="text" placeholder="€€€" id="gives4"/>
-                    <button id="setB4">Set</button>
+                <p id="wallet"> 0 </p>
+                <form id= "set" action="">
+                    <input type="text" placeholder="€€€" id="sets"/>
+                    <button id="setB">Set</button>
                 </form>
             </div>
 

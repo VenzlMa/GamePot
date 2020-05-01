@@ -41,9 +41,6 @@ app.get("/", (req, res) => res.render("home"));
 var cons = require('consolidate');
 
 
-
-
-
 // Database Connection Info
 const MongoClient = require("mongodb").MongoClient;
 
