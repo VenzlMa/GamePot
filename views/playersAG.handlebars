@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Game Pot</title>
+    <link rel="stylesheet"  href="stylesAG.css">
+    <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
+    <script src="scripts.js" async></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- for responsive Design -->
+</head>
+
+<body>
+<section>
+    <div class="container">
+
+        <div class="test">
+
+            <form>
+                <input type="text" placeholder="username" id="addID"/>
+                <button class="test btn" id="addPlayerB">addPlayer</button>
+            </form>
+
+            <form>
+                <input type="text" placeholder="username" id="removeID"/>
+                <button class="test btn" id="removePlayerB">removePlayer</button>
+            </form>
+
+            <form>
+                <input type="text" placeholder="€€€" id="startingW"/>
+                <button class="test btn" id="setWalletB">setWallets!</button>
+            </form>
+
+            <button class="test btn" id="changeColor">changeColor</button>
+
+
+        </div>
+
+        <div class="heading">
+            Pot:
+            <t id="gamePot">0</t>
+        </div>
+
+        <form class = "radio" id= "Split" action=""> <!-- Player auswählen und Pot vergeben -->
+            <!-- TuDu lables -->
+            <input class="radio" type="radio" name="player" value = 1 id="radioP1"> Player 1 <br>
+            <button id="splitPotB">Split!</button>
+        </form>
+
+        <div class="card-wrapper"> <!-- alle Player in diesem Container-->
+
+            <div class="card" id="masterP">
+                <h1>Player 1</h1>
+                <p id="wallet"> 0 </p>
+                <form id= "set" action="">
+                    <input type="text" placeholder="€€€" id="sets"/>
+                    <button id="setB">Set</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
