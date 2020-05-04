@@ -14,11 +14,11 @@
             <div class="card">
 
                 <form action="/players" method="POST">
-                    <label class="text" for="username">Player</label>
-                    <input type="String" id="UserID" placeholder="Username">
+                    <label class="sr-only" for="username">Player</label>
+                    <input type="String" name="username" id="inputUsername" placeholder="Username" required>
                     <br>
-                    <label class="text" for="credits">Credits</label>
-                    <input type="String" id="credits" placeholder="Credits">
+                    <label class="sr-only" for="credits">Credits</label>
+                    <input type="number" name="credits" id="inputCredits" placeholder="Credits" required>
                     <br>
                     <button class="btn" type="submit">BET!</button>
                 </form>

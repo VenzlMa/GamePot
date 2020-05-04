@@ -27,12 +27,19 @@ use hierarchy to find values
    ToDo: Iterate over cards and apply to every Button
    */
 
+
 const setWalletBtn = document.querySelector("#setWalletB");
 const startW =document.querySelector("#startingW");
+
+//const index = require('./public/index.js');
+
+
 
 setWalletBtn.onclick = setWallet;
 
 function setWallet (b) {
+	
+	
 	b.preventDefault();
 	// alert("setMoney");
 
@@ -54,8 +61,13 @@ function setWallet (b) {
 const addPlayerBtn = document.querySelector("#addPlayerB");
 addPlayerBtn.onclick = addPlayer;
 
+
 function addPlayer(a) {
 	a.preventDefault();
+	
+	console.log(index.findPlayers());
+	alert();
+	
 	//alert("newPlayer");
 	const userName =document.querySelector("#addID");
 
@@ -64,7 +76,7 @@ function addPlayer(a) {
 			<div class="card">
                 <h1>${userName.value}</h1>
                 <p id="wallet"> 0 </p>
-                <form id= "set" action="">
+                <form id= "set" >
                     <input type="text" placeholder="€€€" id="sets"/>
                     <button id="setB">Set</button>
                 </form>
@@ -142,5 +154,5 @@ function splitPot(t) {
 
 };
 
-
+//module.export = scripts;
 

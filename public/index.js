@@ -1,15 +1,17 @@
-// index.js
+// login.js
 
 /**
  * Required External Modules
  */
 
+
 // Import necessary packages
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-
 const exphbs = require('express-handlebars');
+
+//const add = require("./scripts");
 
 /**
  * App Variables
@@ -44,12 +46,10 @@ app.use(express.static('public'));
 //app.set('view engine', 'html');
 
 
-// The index route
+// The login route
 app.get("/", (req, res) => res.render("home"));
 
 
-// The index route
-app.get("/", (req, res) => res.render("home"));
 
 var cons = require('consolidate');
 
@@ -81,7 +81,7 @@ let db;
 	   
        if (db) {
            console.log("Database is Connected!");
-		    await findPlayers(client);
+		    //await findPlayers(client);
 		    await monitorListingsUsingEventEmitter(client);
        }
    });
@@ -129,6 +129,13 @@ async function monitorListingsUsingEventEmitter(client, timeInMs = 6000000, pipe
    //log every change
    changeStream.on('change', (next) => {
      console.log(next);
+	 
+	 if(next.operationType=='insert') {
+		 console.log(next.fullDocument.username)
+		 //scripts.addPlayer(next.fullDocument.username) -> von Antonia Aufrufen
+		 
+	 }
+
 });
 
   await closeChangeStream(timeInMs, changeStream);
@@ -141,21 +148,26 @@ async function monitorListingsUsingEventEmitter(client, timeInMs = 6000000, pipe
 // Route to create new player
 app.post("/players", async function(req, res) {
    // get information of player from POST body data
-   let { username, credits } = req.body;
-
+   let {username,credits} = req.body;
+   var creditsInt=parseInt(req.body.credits)
+   
+   let playerNr=1;   
+   
    // check if the username already exists
    const alreadyExisting = await db
-       .collection("GamePot")
-       .findOne({ username: username });
-
+       .collection("players")
+       .findOne({username:username});
+	    
    if (alreadyExisting) {
-       res.send({ status: false, msg: "player username already exists " +username});
+       res.send({ status: false, msg: "player username already exists " + username});
    } else {
        // create the new player
-       await db.collection("players").insertOne({ username, credits });
+       await db.collection("players").insertOne(
+	   { username:username, "credits":creditsInt , playerNr:playerNr}
+	   );
        //console.log(`Created Player ${username}`);
        //res.send({ status: true, msg: "player created-> " + username + ", credits:" + credits});
-	   res.render("playersAG", { title: "Home" })
+	   res.render("playersAG", { title: "home" })
    }
 });
 
@@ -181,6 +193,7 @@ app.put("/players", async function(req, res) {
 // delete player
 app.delete("/players", async function(req, res) {
    let { username, credits } = req.body;
+   
    // check if the username already exists
    const alreadyExisting = await db
        .collection("players")
@@ -197,7 +210,7 @@ app.delete("/players", async function(req, res) {
 
 
 // Access the leaderboard
-app.get("/players", async function(req, res) {
+app.get("/limitPlayers", async function(req, res) {
    // retrieve ‘lim’ from the query string info
    
    try {
@@ -207,12 +220,13 @@ app.get("/players", async function(req, res) {
        // -1 is for descending and 1 is for ascending
        .sort({ credits: -1 })
        // Show only [lim] players
-	   .limit(lim)
-       .toArray(function(error,result) {
-		 
-            console.log(Array.from(result)); 
-			res.send({ status: true, msg: result });
-		});
+       .limit(parseInt(lim))
+       .toArray(function(err, result) {
+           if (err)
+               res.send({ status: false, msg: "failed to retrieve players" });
+           console.log(Array.from(result));
+           res.send({ status: true, msg: result });
+       });
 	} catch (error) {
       
       return res.send(error.message);
@@ -220,3 +234,11 @@ app.get("/players", async function(req, res) {
 });
 
 
+////////////////////////////////////////////////////////////////
+//Antonias Script
+////////////////////////////////////////////////////////////////
+
+
+module.exports = {
+  index: require('./index')
+};
