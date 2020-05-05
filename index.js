@@ -45,11 +45,9 @@ app.use(express.static('public'));
 
 
 // The index route
-app.get("/", (req, res) => res.render("home"));
+app.get("/", (req, res) => res.render("playersAG"));
 
 
-// The index route
-app.get("/", (req, res) => res.render("home"));
 
 var cons = require('consolidate');
 
