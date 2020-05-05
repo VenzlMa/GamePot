@@ -43,7 +43,7 @@
 
             <form class = "radio" id= "Split" action="">
                 <div class = "radioWrapper" id="radioW">
-                    <div><input class="radioIn" type="radio" name="player" value = 1 id="radioP1"> Player 1</div>
+                    <div><input class="radioIn" type="radio" name="player" value = 1 id="Player1"> Player1</div>
                 </div>
                 <button id="splitPotB">Split!</button>
             </form>
@@ -51,11 +51,11 @@
         <div class="card-wrapper"> <!-- alle Player in diesem Container-->
 
             <div class="card" id="masterP">
-                <h1>Player 1</h1>
+                <h1 class="playerID">Player1</h1>
                 <p id="wallet" class="wallet"> 0 </p>
                 <form class="set" id= "set">
                     <input type="text" placeholder="€€€" class="sets" id="sets"/>
-                    <button class="setBtn" id="setB">Set</button>
+                    <button disabled = true class="setBtn" id="setB">Set</button>
                 </form>
             </div>
         </div>

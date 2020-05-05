@@ -5,20 +5,17 @@ use classes for buttons to select similar buttons --> creates array of buttons
 use hierarchy to find values
 
  */
-
-if (document.readyState == 'loading') {
+if (document.readyState === 'loading') {
 	document.addEventListener('DOMContentLoaded', ready)
 } else {
 	ready()  //setMoney
 }
 
-
-
 /* -----------------------------------------------------------------------------
    --------------- Function: add new Player ------------------------------------
    -----------------------------------------------------------------------------*/
 
-var allPlayersGlobal = document.getElementsByClassName('card');
+//let allPlayersGlobal = document.getElementsByClassName('card');
 
 const addPlayerBtn = document.querySelector("#addPlayerB");
 addPlayerBtn.onclick = addPlayer;
@@ -31,26 +28,26 @@ function addPlayer(a) {
 	var newPlayer = document.createElement('div');
 	var newPlayerContent = `
 			<div class="card">
-                <h1>${userName.value}</h1>
+                <h1 class="playerID">${userName.value}</h1>
                 <p id="wallet" class="wallet"> 0 </p>
                 <form id= "set" action="">
                     <input type="text" placeholder="€€€" class="sets" id="sets"/>
-                    <button class="setBtn" id="setB">Set</button>
+                    <button disabled = true class="setBtn" id="setB">Set</button>
                 </form>
             </div>`;
 	newPlayer.innerHTML = newPlayerContent;
 	var allPlayers = document.getElementsByClassName('card-wrapper')[0];
 	allPlayers.append(newPlayer);
+	newPlayer.getElementsByClassName('setBtn')[0].onclick = setMoney;
 
 	var newRadio = document.createElement('div');
-	var newPlayerRadio = `<input class="radio" type="radio" name="player" id="radioP">${userName.value}<br>`
+	var newPlayerRadio = `<input class="radio" type="radio" name="player" id="${userName.value}">${userName.value}<br>`
 
 	newRadio.innerHTML = newPlayerRadio;
 	var allRadio = document.getElementsByClassName('radioWrapper')[0];
 	allRadio.append(newRadio);
 
 	userName.value = '';
-
 }
 
 /* -----------------------------------------------------------------------------
@@ -72,10 +69,17 @@ function setWallet (b) {
 		var wallet = allPlayers[i];
 		wallet = wallet.querySelector("#wallet");
 		wallet.innerText = startW.value;
-		allPlayersGlobal[i] = allPlayers[i];
+		//allPlayersGlobal[i] = allPlayers[i];
 		//console.log(allPlayersGlobal[i]);
 	}
 
+	var setBtns = document.getElementsByClassName("setBtn");
+	//console.log(setBtns);
+	for(var i = 0; i < setBtns.length; i++) {
+		//var input = setBtns[i].getElementsByClassName("sets");
+		var btn = setBtns[i];
+		btn.disabled = false;
+	}
 	setWalletBtn.disabled = true;
 	addPlayerBtn.disabled = true;
 	removePlayerBtn.disabled = true;
@@ -88,46 +92,51 @@ function setWallet (b) {
    -----------------------------------------------------------------------------*/
 
 const gamePot = document.querySelector("#gamePot");
+setBtn = document.getElementsByClassName("setBtn");
+setBtn.onclick = setMoney;
 
 function ready (e) {
 var setBtns = document.getElementsByClassName("setBtn");
+//console.log(setBtns);
 	for(var i = 0; i < setBtns.length; i++) {
 		//var input = setBtns[i].getElementsByClassName("sets");
 		var btn = setBtns[i];
-		btn.onclick = setMoney; //(input) ????
+		btn.onclick = setMoney;
 	};
 };
 
-function setMoney(e) {  // wie input übergeben?
+function setMoney(e) {
 	e.preventDefault();
 
 	const btnCl = e.target;
-	const playerForm = btnCl.parentElement; // <form class="set" id="set"> <input....>
-	const playerCard = playerForm.parentElement;
+	const playerCard = btnCl.parentElement.parentElement;
 
-	var set = playerForm.getElementsByClassName('sets')[0].innerText;
+	const gamePot = document.querySelector("#gamePot");
 
-	const inVal = parseInt(set.value, 10); //Input-Betrag speichern
+	const set = playerCard.getElementsByClassName('sets')[0].value;
+	const inVal = parseInt(set, 10); //Input-Betrag speichern
 
 	const pot = parseInt(gamePot.innerText, 10) + inVal; // Betrag zu aktuellen Pot addieren
 	gamePot.innerText = pot; // neuen Pot anzeigen
 
-	var wallet = playerCard.getElementsByClassName('wallet')[0].innerText;
+	var wallet = playerCard.getElementsByClassName('wallet')[0];
+	var walletValue = wallet.innerText;
 
-	console.log(playerCard);
-	console.log(set);
-	console.log(wallet);
-
-	const Nwallet = parseInt(wallet.innerText, 10) - inVal; //Betrag von Credits abziehen
+	const Nwallet = parseInt(wallet.innerText, 10) - parseInt(set, 10); //Betrag von Credits abziehen
 	wallet.innerText = Nwallet; //neue Credits anzeigen
 
-	set.value = ""; //placeholder zurücksetzen
+	/*
+	console.log("playerCard"); console.log(playerCard);
+	console.log("set"); console.log(set);
+	console.log("inVal"); console.log(inVal);
+	console.log("pot"); console.log(pot)
+	console.log("gamePot");	console.log(gamePot)
+	console.log("wallet"); console.log(wallet);
+	console.log("Nwallet");	console.log(Nwallet)
+	*/
 
-
+	let setset = playerCard.getElementsByClassName('sets')[0].value = ""; //placeholder zurücksetzen
 };
-
-
-
 
 /* -----------------------------------------------------------------------------
    --------------- Function: split the Pot -------------------------------------
@@ -138,21 +147,44 @@ splitBtn.onclick =  splitPot; // Function zum Aufteilen aufrufen
 
 function splitPot(t) {
 	t.preventDefault();
-	//alert("splitPot");
-	//const playerID = document.querySelector('input[name="player"]:checked').value; //gewählter Player von radio Btns
+	const playerID = document.querySelector('input[name="player"]:checked').id; //gewählter Player von radio Btns
+	var allPlayers = document.getElementsByClassName('card');
+	var playerName;
+	var player;
+
+	for(var i = 0; i < allPlayers.length; i++) {
+		playerName = allPlayers[i].getElementsByClassName("playerID")[0].innerHTML;
+		if (playerName === playerID) {
+			player = allPlayers[i];
+			break;
+		}
+	}
+
 
 	const pot = parseInt(gamePot.innerText, 10); // aktueller Pot
-	var wallet = document.querySelector("#wallet");
 
-	const Nwallet = parseInt(wallet.innerText, 10) + pot; // Pot zu Wallet Player1 zuteilen
+	const wallet = player.getElementsByClassName('wallet')[0];
+	const walletVal = wallet.innerHTML;
 
-	wallet.innerText = Nwallet; // neue Credits anzeigen
+	const Nwallet = parseInt(walletVal, 10) + pot; // Pot zu Wallet Player1 zuteilen
+
+/*
+	console.log("pot"); console.log(pot);
+	console.log("wallet"); console.log(wallet);
+	console.log("walletVal"); console.log(walletVal);
+	console.log("Nwallet");console.log(Nwallet);
+*/
+	wallet.innerHTML = Nwallet; // neue Credits anzeigen
 	gamePot.innerText = 0; // Pot wieder auf 00 setzen
 
-	alert(document.querySelector('input[name="player"]:checked').value); //Kontrolle PlayerID
+	//const btnCl = t.target;
+	//const radioWrapper = btnCl.parentElement;
+
+	//console.log(radioWrapper);
+	//console.log(allPlayers);
+	//console.log(playerID); //Kontrolle PlayerID
 
 };
-
 
 
 /* -----------------------------------------------------------------------------
@@ -163,11 +195,8 @@ const removePlayerBtn = document.querySelector("#removePlayerB");
 //const userName =document.querySelector("#userID");
 removePlayerBtn.onclick = removePlayer;
 
-
 function removePlayer(a) {
 	a.preventDefault();
 	alert("removePlayer");
-}
-
-
+};
 
