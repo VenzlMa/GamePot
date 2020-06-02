@@ -8,8 +8,8 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-
 const exphbs = require('express-handlebars');
+var cons = require('consolidate');
 
 /**
  * App Variables
@@ -31,27 +31,13 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-var cons = require('consolidate');
 
-// setup css
+// setup css and js
 app.use(express.static('public'));
 
 
-
-// view engine setup
-//app.engine('html', cons.swig)
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'html');
-
-
 // The index route
 app.get("/", (req, res) => res.render("home"));
-
-
-// The index route
-app.get("/", (req, res) => res.render("home"));
-
-var cons = require('consolidate');
 
 
 // Database Connection Info
@@ -63,14 +49,12 @@ const url =
 let db;
 
 
-
 // Connect to the database with [url]
 (async () => {
    let client = 
    await MongoClient.connect(
        url,
        { useNewUrlParser: true }
-	   
 	  
    );
 
@@ -101,12 +85,14 @@ async function findPlayers(client) {
         results.forEach((result, i) => {
 
             console.log(result);
+
             // Here you could build your html or put the results in some other data structure you want to work with
         });
     } else {
         console.log(`No players found`);
     }
 }
+
 
 
 //ChangeStream
@@ -134,8 +120,6 @@ async function monitorListingsUsingEventEmitter(client, timeInMs = 6000000, pipe
   await closeChangeStream(timeInMs, changeStream);
    
 }
-
-
 
 
 // Route to create new player
@@ -197,7 +181,7 @@ app.delete("/players", async function(req, res) {
 
 
 // Access the leaderboard
-app.get("/players", async function(req, res) {
+app.get("/api", async function(req, res) {
    // retrieve ‘lim’ from the query string info
    
    try {
@@ -211,7 +195,7 @@ app.get("/players", async function(req, res) {
        .toArray(function(error,result) {
 		 
             console.log(Array.from(result)); 
-			res.send({ status: true, msg: result });
+			res.json(result);
 		});
 	} catch (error) {
       
@@ -219,4 +203,8 @@ app.get("/players", async function(req, res) {
     }
 });
 
-
+/*
+app.get('/api',(req, res) => {
+    res.json({test: "123"});
+});
+*/

@@ -27,6 +27,7 @@
     "express-handlebars": "^4.0.4",
     "heroku": "^7.41.1",
     "mongodb": "^3.5.5",
+    "nedb": "^1.8.0",
     "swig": "^1.4.2"
   },
   "devDependencies": {
