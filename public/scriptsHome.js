@@ -4,10 +4,14 @@ if (document.readyState === 'loading') {
     ready();
 };
 
+
+let data;
+let response;
+
 getPlayers();
 async function getPlayers() {
-    const response = await fetch('/api');
-    const data = await response.json();
+    response = await fetch('/api');
+    data = await response.json();
 
     for (item of data) {
         if (item.selected === false) {
@@ -15,37 +19,53 @@ async function getPlayers() {
             var allPlayers = document.getElementsByClassName('card-wrapper')[0];
 
             var newPlayerContent = `
-			         <div class="card">
-                         <h1>${item.username}</h1>
-                         <!--form> action="/players" method="POST"> </form-->
-                         <form id = "choose" action="">
+			         <div class="card choose-card">
+                         <h1 id="PlayerCardName">${item.username}</h1>
+                         <form <!--action="/players" method="PUT"--> 
                             <button type="submit" id="chooseBtn" class="ChBtn">Choose!</button>
                          </form>                        
                      </div>`;
+
             newPlayer.innerHTML = newPlayerContent;
             allPlayers.append(newPlayer); //neue Play-card zu card-wrapper hinzufügen
+            newPlayer.getElementsByClassName('ChBtn')[0].onclick = selectPlayer; //Funktion aufrufen, falls Button geklickt wird
         }
     }
 }
 
-
 function ready (e) {
-    var chooseBtns = document.getElementsByClassName("ChBtn");
-    console.log(chooseBtns.length);
+    let chooseBtns = document.getElementsByClassName("ChBtn");
     for (var i=0; i < chooseBtns.length; i++) {
         console.log(chooseBtns[i]);
-        var btn = chooseBtns[i];
-        //btn.onclick = selectPlayer;
-    };
-};
+        let btn = chooseBtns[i];
+        btn.onclick = selectPlayer;
+    }
+}
 
-/*
-function selectPlayer (r) {
+async function selectPlayer (r) {
     r.preventDefault();
-    alert("choose");
 
-   /* const btnCl = e.target; //target, damit nur dieser (geklickte) Button verwendent wird
+    const btnCl = r.target; //target, damit nur dieser (geklickte) Button verwendent wird
     const playerCard = btnCl.parentElement.parentElement; //PlayerCard auswählen
-    console.log(playerCard);
+    const playerName = playerCard.querySelector("#PlayerCardName").innerHTML;
 
-}*/
+    console.log(playerName);
+    //console.log(data);
+
+    for (item of data) {
+        let toSend = item;
+        if (toSend.username === playerName && toSend.selected === false) {
+            toSend.selected = true;
+            //console.log(toSend);
+            const options = {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(toSend)
+            };
+            fetch('/players', options);
+            console.log(toSend)
+            window.location.pathname = "/players"
+            break;
+        }
+    }
+}

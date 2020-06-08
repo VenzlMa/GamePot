@@ -4,9 +4,6 @@ if (document.readyState === 'loading') {
 	ready();  //goes to setMoney
 };
 
-/*
-----------------------------
- */
 
 getPlayers();
 async function getPlayers() {
@@ -133,8 +130,9 @@ const gamePot = document.querySelector("#gamePot");
 function ready (e) {
 	var setBtns = document.getElementsByClassName("setBtn"); //alle setBtns speichern
 	console.log(setBtns);
+	console.log(setBtns.length);
 	for(var i = 0; i < setBtns.length; i++) {
-		console.log(setBtns);
+		alert(setBtns);
 		//var input = setBtns[i].getElementsByClassName("sets");
 		var btn = setBtns[i];
 		btn.onclick = setMoney; //Funktion aufrufen

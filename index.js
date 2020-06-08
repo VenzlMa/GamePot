@@ -38,6 +38,7 @@ app.use(express.static('public'));
 
 // The index route
 app.get("/", (req, res) => res.render("home"));
+app.get("/players", (req, res) => res.render("playersAG"));
 
 
 // Database Connection Info
@@ -143,6 +144,7 @@ app.post("/players", async function(req, res) {
    }
 });
 
+/*
 app.put("/players", async function(req, res) {
    let { username, credits } = req.body;
    // check if the username already exists
@@ -159,7 +161,7 @@ app.put("/players", async function(req, res) {
    } else {
        res.send({ status: false, msg: "player username not found" });
    }
-});
+});*/
 
 
 // delete player
@@ -208,3 +210,26 @@ app.get('/api',(req, res) => {
     res.json({test: "123"});
 });
 */
+
+app.put("/players", async function(req, res) {
+
+    let { username, selected } = req.body;
+    // check if the username already exists
+    const alreadyExisting = await db
+        .collection("players")
+        .findOne({ username: username });
+    if (alreadyExisting) {
+        // Update player object with the username
+        await db
+            .collection("players")
+            .updateOne({ username }, { $set: { username, selected } }); //selected
+        console.log(`Player ${username} credits updated to ${selected}`);
+        //res.render();
+    } else {
+        res.send({ status: false, msg: "player username not found" });
+    }
+});
+
+
+
+
