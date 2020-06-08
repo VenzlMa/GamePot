@@ -4,6 +4,10 @@ if (document.readyState === 'loading') {
 	ready();  //goes to setMoney
 };
 
+/* -----------------------------------------------------------------------------
+   --------------- Function: add new Player ------------------------------------
+   -----------------------------------------------------------------------------
+ */
 
 getPlayers();
 async function getPlayers() {
@@ -38,49 +42,6 @@ async function getPlayers() {
 		}
 	}
 }
-
-
-/* -----------------------------------------------------------------------------
-   --------------- Function: add new Player ------------------------------------
-   -----------------------------------------------------------------------------
-   ToDo: check if name already exists
-
-//let allPlayersGlobal = document.getElementsByClassName('card');
-
-const addPlayerBtn = document.querySelector("#addPlayerB");
-//addPlayerBtn.onclick = addPlayer; // addPlayer ausführen wenn Klick auf addPlayer-Button
-
-function addPlayer(a) {
-	a.preventDefault();
-	//alert("newPlayer"); // test ob funktion aufgerufen wird
-	const userName =document.querySelector("#addID"); //input-Feld speichern
-
-	var newPlayer = document.createElement('div'); //neue Player-Card anlegen
-	var newPlayerContent = `
-			<div class="card">
-                <h1 class="playerID">${userName.value}</h1>
-                <p id="wallet" class="wallet"> 0 </p>
-                <form id= "set" action="">
-                    <input type="text" placeholder="€€€" class="sets" id="sets"/>
-                    <button disabled = true class="setBtn" id="setB">Set</button>
-                </form>
-            </div>`;
-	newPlayer.innerHTML = newPlayerContent;
-	var allPlayers = document.getElementsByClassName('card-wrapper')[0];
-	allPlayers.append(newPlayer); //neue Play-card zu card-wrapper hinzufügen
-	newPlayer.getElementsByClassName('setBtn')[0].onclick = setMoney; //Funktion aufrufen, falls Button geklickt wird
-
-	//selbes für Radio-Button statt Player-Card
-	var newRadio = document.createElement('div');
-	var newPlayerRadio = `<input class="radio" type="radio" name="player" id="${userName.value}">${userName.value}<br>`
-
-	newRadio.innerHTML = newPlayerRadio;
-	var allRadio = document.getElementsByClassName('radioWrapper')[0];
-	allRadio.append(newRadio);
-
-	userName.value = ''; // userName wiedre auf placholder setzten
-}
-*/
 
 /* -----------------------------------------------------------------------------
    --------------- Function: set Starting Wallets ------------------------------
@@ -129,8 +90,8 @@ const gamePot = document.querySelector("#gamePot");
 
 function ready (e) {
 	var setBtns = document.getElementsByClassName("setBtn"); //alle setBtns speichern
-	console.log(setBtns);
-	console.log(setBtns.length);
+	//console.log(setBtns);
+	//console.log(setBtns.length);
 	for(var i = 0; i < setBtns.length; i++) {
 		alert(setBtns);
 		//var input = setBtns[i].getElementsByClassName("sets");
@@ -154,27 +115,21 @@ function setMoney(e) {
 	gamePot.innerText = pot; // neuen Pot anzeigen
 
 	var wallet = playerCard.getElementsByClassName('wallet')[0]; //aktuelle Credits speichern
+	var player = playerCard.getElementsByClassName('playerID')[0].innerHTML;
 
 	const Nwallet = parseInt(wallet.innerText, 10) - parseInt(set, 10); //Betrag von Credits abziehen
-	wallet.innerText = Nwallet; //neue Credits anzeigen
 
-	/* Tests
-	console.log("playerCard"); console.log(playerCard);
-	console.log("set"); console.log(set);
-	console.log("inVal"); console.log(inVal);
-	console.log("pot"); console.log(pot)
-	console.log("gamePot");	console.log(gamePot)
-	console.log("wallet"); console.log(wallet);
-	console.log("Nwallet");	console.log(Nwallet)
-	*/
-
-	let setset = playerCard.getElementsByClassName('sets')[0].value = ""; //placeholder zurücksetzen
+	if (Nwallet <= 0) {
+		alert(player + " does not have enought money to bet.")
+	} else {
+		wallet.innerText = Nwallet; //neue Credits anzeigen
+		let setset = playerCard.getElementsByClassName('sets')[0].value = ""; //placeholder zurücksetzen
+	}
 };
 
 /* -----------------------------------------------------------------------------
    --------------- Function: split the Pot -------------------------------------
    -----------------------------------------------------------------------------*/
-
 
 splitBtn.onclick =  splitPot; // Function zum Aufteilen aufrufen
 
@@ -203,37 +158,46 @@ function splitPot(t) {
 	const uncheck = document.querySelector('input[name="player"]:checked');
 	uncheck.checked = false;
 
-/* Tests
-	console.log("pot"); console.log(pot);
-	console.log("wallet"); console.log(wallet);
-	console.log("walletVal"); console.log(walletVal);
-	console.log("Nwallet");console.log(Nwallet);
-	const btnCl = t.target;
-	const radioWrapper = btnCl.parentElement;
-	console.log(radioWrapper);
-	console.log(allPlayers);
-	console.log(playerID); //Kontrolle PlayerID
-*/
 	wallet.innerHTML = Nwallet; // neue Credits anzeigen
 	gamePot.innerText = 0; // Pot wieder auf 00 setzen
-
-
-
 };
 
 
 /* -----------------------------------------------------------------------------
-	--------------- Function: remove a Player ----------------------------------
+	--------------- Function: deselect a Player ----------------------------------
 	-----------------------------------------------------------------------------
-	ToDO: ALLES, aber ist diese Funktion nötig
-
-const removePlayerBtn = document.querySelector("#removePlayerB");
-//const userName =document.querySelector("#userID");
-removePlayerBtn.onclick = removePlayer;
-
-function removePlayer(a) {
-	a.preventDefault();
-	alert("removePlayer");
-};
-
 */
+
+const endGameBtn = document.getElementById('endGameB') //Button
+endGameBtn.onclick = endGame; //Funktion aufrufen
+
+
+
+async function endGame (e) {
+	e.preventDefault();
+	console.log("endgame");
+
+	const response = await fetch('/api');
+	const data = await response.json();
+	console.log(data);
+
+	for (item of data) {
+		let toSend = item;
+		console.log(toSend);
+		toSend.selected = false;
+		console.log(toSend);
+		const options = {
+			method: 'PUT',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify(toSend)
+		};
+		fetch('/players', options);
+	}
+	//window.location.pathname = "/"
+}
+
+
+
+
+
+
