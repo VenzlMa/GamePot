@@ -30,7 +30,7 @@ async function getPlayers() {
             </div>`;
 			newPlayer.innerHTML = newPlayerContent;
 			allPlayers.append(newPlayer); //neue Play-card zu card-wrapper hinzufügen
-			newPlayer.getElementsByClassName('setBtn')[0].onclick = setMoney; //Funktion aufrufen, falls Button geklickt wird
+			//newPlayer.getElementsByClassName('setBtn')[0].onclick = setMoney; //Funktion aufrufen, falls Button geklickt wird
 
 			// RADIO Buttons
 			var newRadio = document.createElement('div');
@@ -171,29 +171,37 @@ function splitPot(t) {
 const endGameBtn = document.getElementById('endGameB') //Button
 endGameBtn.onclick = endGame; //Funktion aufrufen
 
-
-
 async function endGame (e) {
 	e.preventDefault();
 	console.log("endgame");
 
 	const response = await fetch('/api');
 	const data = await response.json();
-	console.log(data);
+	//console.log(data);
 
 	for (item of data) {
-		let toSend = item;
-		console.log(toSend);
-		toSend.selected = false;
-		console.log(toSend);
-		const options = {
-			method: 'PUT',
-			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify(toSend)
-		};
-		fetch('/players', options);
+		var toSend = item;
+		//console.log(toSend);
+		//if (toSend.selected == true) {
+			toSend.selected = false;
+			console.log(toSend);
+			const options = {
+				method: 'PUT',
+				headers: {'Content-Type': 'application/json'},
+				body: JSON.stringify(toSend)
+			};
+			fetch('/players', options); //returns to app.put("/players",... in index.js
+		//}
 	}
-	//window.location.pathname = "/"
+	console.log("goToHome")
+	//goToHome(e);
+	window.location.href = "/home";
+}
+
+async function goToHome() {
+	fetch('/').then(res => res.redirect("/home"));
+	//e.render('/home')
+	//window.location.pathname = "/";
 }
 
 

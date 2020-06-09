@@ -38,6 +38,9 @@ app.use(express.static('public'));
 
 // The index route
 app.get("/", (req, res) => res.render("home"));
+app.get("/home", (req, res) => res.render("home"));
+app.post("/home", (req, res) => res.render("home"));
+app.post("/", (req, res) => res.render("home"));
 app.get("/players", (req, res) => res.render("playersAG"));
 
 
@@ -215,6 +218,7 @@ app.put("/players", async function(req, res) {
 
     let { username, selected } = req.body;
     // check if the username already exists
+    //res.redirect("players")
     const alreadyExisting = await db
         .collection("players")
         .findOne({ username: username });
@@ -223,13 +227,15 @@ app.put("/players", async function(req, res) {
         await db
             .collection("players")
             .updateOne({ username }, { $set: { username, selected } }); //selected
-        console.log(`Player ${username} credits updated to ${selected}`);
-        //res.render();
+        // console.log(`Player ${username} credits updated to ${selected}`);
+        res.send({ status: true, msg: "Update-> " + username });
     } else {
         res.send({ status: false, msg: "player username not found" });
     }
+
+
 });
 
-
+//app.put("/players", (req, res) => res.render("playersAG"));
 
 

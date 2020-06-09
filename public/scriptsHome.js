@@ -62,10 +62,11 @@ async function selectPlayer (r) {
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(toSend)
             };
-            fetch('/players', options);
+            fetch('/players', options); //returns to app.put("/players",... in index.js
             console.log(toSend)
-            window.location.pathname = "/players"
+           //
             break;
         }
     }
+    window.location.pathname = "/players"
 }
