@@ -194,7 +194,7 @@ app.get("/api", async function(req, res) {
    db.collection("players")
        .find()
        // -1 is for descending and 1 is for ascending
-       .sort({ credits: -1 })
+       //.sort({ credits: -1 })
        // Show only [lim] players
 	   .limit(lim)
        .toArray(function(error,result) {
@@ -208,6 +208,29 @@ app.get("/api", async function(req, res) {
     }
 });
 
+// Access the leaderboard
+app.get("/pot", async function(req, res) {
+    // retrieve ‘lim’ from the query string info
+
+    try {
+        let lim  = parseInt(req.query);
+        db.collection("Pot")
+            .find()
+            // -1 is for descending and 1 is for ascending
+            .sort({ credits: -1 })
+            // Show only [lim] players
+            .limit(lim)
+            .toArray(function(error,result) {
+
+                console.log(Array.from(result));
+                res.json(result);
+            });
+    } catch (error) {
+
+        return res.send(error.message);
+    }
+});
+
 /*
 app.get('/api',(req, res) => {
     res.json({test: "123"});
@@ -216,7 +239,7 @@ app.get('/api',(req, res) => {
 
 app.put("/players", async function(req, res) {
 
-    let { username, selected } = req.body;
+    let { username, selected, credits } = req.body;
     // check if the username already exists
     //res.redirect("players")
     const alreadyExisting = await db
@@ -226,16 +249,30 @@ app.put("/players", async function(req, res) {
         // Update player object with the username
         await db
             .collection("players")
-            .updateOne({ username }, { $set: { username, selected } }); //selected
+            .updateOne({ username }, { $set: { username, selected, credits } }); //selected
         // console.log(`Player ${username} credits updated to ${selected}`);
         res.send({ status: true, msg: "Update-> " + username });
     } else {
         res.send({ status: false, msg: "player username not found" });
     }
-
-
 });
 
-//app.put("/players", (req, res) => res.render("playersAG"));
+app.put("/pot", async function(req, res) {
 
-
+    let { username, pot } = req.body;
+    // check if the username already exists
+    //res.redirect("players")
+    const alreadyExisting = await db
+        .collection("Pot")
+        .findOne({ username: username });
+    if (alreadyExisting) {
+        // Update player object with the username
+        await db
+            .collection("Pot")
+            .updateOne({ username }, { $set: { pot } }); //selected
+        // console.log(`Player ${username} credits updated to ${selected}`);
+        res.send({ status: true, msg: "Update-> " + pot });
+    } else {
+        res.send({ status: false, msg: "player username not found" });
+    }
+});
