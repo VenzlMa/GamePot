@@ -31,10 +31,8 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-
 // setup css and js
 app.use(express.static('public'));
-
 
 // The index route
 app.get("/", (req, res) => res.render("home"));
@@ -52,14 +50,12 @@ const url =
 "mongodb+srv://VenzlMa:x2345678@gamepot-zzavq.mongodb.net/test?retryWrites=true&w=majority"
 let db;
 
-
 // Connect to the database with [url]
 (async () => {
    let client = 
    await MongoClient.connect(
        url,
        { useNewUrlParser: true }
-	  
    );
 
    db = client.db("GamePot");
@@ -74,7 +70,6 @@ let db;
        }
    });
 })();
-
 
 //other way for fetching data from mongo db with cursors
 async function findPlayers(client) {
@@ -97,8 +92,6 @@ async function findPlayers(client) {
     }
 }
 
-
-
 //ChangeStream
 // tutorial: https://developer.mongodb.com/quickstart/nodejs-change-streams-triggers
 function closeChangeStream(timeInMs = 6000000, changeStream) {
@@ -110,6 +103,7 @@ function closeChangeStream(timeInMs = 6000000, changeStream) {
         }, timeInMs)
     })
 };
+
 
 async function monitorListingsUsingEventEmitter(client, timeInMs = 6000000, pipeline = []){
    
@@ -125,8 +119,7 @@ async function monitorListingsUsingEventEmitter(client, timeInMs = 6000000, pipe
    
 }
 
-
-// Route to create new player
+/* Route to create new player
 app.post("/players", async function(req, res) {
    // get information of player from POST body data
    let { username, credits } = req.body;
@@ -146,6 +139,7 @@ app.post("/players", async function(req, res) {
 	   res.render("playersAG", { title: "Home" })
    }
 });
+*/
 
 /*
 app.put("/players", async function(req, res) {
@@ -167,7 +161,7 @@ app.put("/players", async function(req, res) {
 });*/
 
 
-// delete player
+/* delete player
 app.delete("/players", async function(req, res) {
    let { username, credits } = req.body;
    // check if the username already exists
@@ -183,7 +177,7 @@ app.delete("/players", async function(req, res) {
        res.send({ status: false, msg: "username not found" });
    }
 });
-
+ */
 
 // Access the leaderboard
 app.get("/api", async function(req, res) {
@@ -217,7 +211,7 @@ app.get("/pot", async function(req, res) {
         db.collection("Pot")
             .find()
             // -1 is for descending and 1 is for ascending
-            .sort({ credits: -1 })
+            //.sort({ credits: -1 })
             // Show only [lim] players
             .limit(lim)
             .toArray(function(error,result) {
@@ -226,7 +220,6 @@ app.get("/pot", async function(req, res) {
                 res.json(result);
             });
     } catch (error) {
-
         return res.send(error.message);
     }
 });
@@ -238,7 +231,6 @@ app.get('/api',(req, res) => {
 */
 
 app.put("/players", async function(req, res) {
-
     let { username, selected, credits } = req.body;
     // check if the username already exists
     //res.redirect("players")
@@ -256,6 +248,7 @@ app.put("/players", async function(req, res) {
         res.send({ status: false, msg: "player username not found" });
     }
 });
+
 
 app.put("/pot", async function(req, res) {
 

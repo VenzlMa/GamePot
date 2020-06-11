@@ -1,7 +1,6 @@
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
-
     ready();  //goes to setMoney
 }
 ;
@@ -127,9 +126,10 @@ async function setWallet(b) {
             var btn = setBtns[i];
             btn.disabled = false;
         }
-        setWalletBtn.disabled = true;
+        //setWalletBtn.disabled = true;
         splitBtn.disabled = false;
         startW.value = "";
+        location.reload()
     }
 };
 
@@ -141,6 +141,9 @@ async function setWallet(b) {
 const gamePot = document.querySelector("#gamePot");
 
 async function ready() {
+
+    setInterval(function(){ location.reload(); }, 5000);
+    //monitorListingsUsingEventEmitter();
 
     const responsePot = await fetch('/pot');
     const dataPot = await responsePot.json();
@@ -159,7 +162,6 @@ async function ready() {
             heading.append(headingDiv);
         }
     }
-
 
     var setBtns = document.getElementsByClassName("setBtn"); //alle setBtns speichern
     //console.log(setBtns);
@@ -194,7 +196,7 @@ async function setMoney(e) {
     //console.log(dataPot);
 
     if (Nwallet <= 0) {
-        alert(playerName + " does not have enought money to bet.")
+        alert(playerName + " does not have enough money to bet.")
     } else {
         /*
 		const pot = parseInt(gamePot.innerText, 10) + inVal; // Betrag zu aktuellen Pot addieren
@@ -215,7 +217,6 @@ async function setMoney(e) {
             }
         }
 
-
         for (item of dataPot) {
             if (item.username === "pot1") {
                 console.log(item)
@@ -230,6 +231,7 @@ async function setMoney(e) {
             }
         }
         let setset = playerCard.getElementsByClassName('sets')[0].value = ""; //placeholder zurücksetzen
+        disabled="false"
     }
 }
 
@@ -268,7 +270,6 @@ async function splitPot(t) {
         const walletVal = wallet.innerHTML;
         const Nwallet = parseInt(walletVal, 10) + pot; // Pot zu Wallet addieren
         const Npot = "0";
-
 
         if (Nwallet <= 0) {
             alert(playerName + " does not have enought money to bet.")
@@ -311,7 +312,7 @@ async function splitPot(t) {
             }
             const uncheck = document.querySelector('input[name="player"]:checked');
             uncheck.checked = false;
-
+            disabled="false"
         }
     }
 };
