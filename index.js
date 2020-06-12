@@ -19,9 +19,7 @@ var cons = require('consolidate');
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-/**
- *  App Configuration
- */
+
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
@@ -34,13 +32,9 @@ app.set('view engine', 'handlebars');
 // setup css and js
 app.use(express.static('public'));
 
-// The index route
-app.get("/", (req, res) => res.render("home"));
-app.get("/home", (req, res) => res.render("home"));
-app.post("/home", (req, res) => res.render("home"));
-app.post("/", (req, res) => res.render("home"));
-app.get("/players", (req, res) => res.render("playersAG"));
-
+/**
+ *  Database Connection
+ */
 
 // Database Connection Info
 const MongoClient = require("mongodb").MongoClient;
@@ -92,7 +86,111 @@ async function findPlayers(client) {
     }
 }
 
-//ChangeStream
+/*
+ **API-Calls
+ */
+
+// The index route
+app.get("/", (req, res) => res.render("home"));
+app.get("/home", (req, res) => res.render("home"));
+app.get("/players", (req, res) => res.render("playersAG"));
+
+// Access the players from DB
+app.get("/api", async function(req, res) {
+    // retrieve ‘lim’ from the query string info
+    try {
+        let lim  = parseInt(req.query);
+        db.collection("players")
+            .find()
+            // -1 is for descending and 1 is for ascending
+            //.sort({ credits: -1 })
+            // Show only [lim] players
+            .limit(lim)
+            .toArray(function(error,result) {
+
+                console.log(Array.from(result));
+                res.json(result);
+            });
+    } catch (error) {
+        return res.send(error.message);
+    }
+});
+
+// Access the pot from the DB
+app.get("/pot", async function(req, res) {
+    // retrieve ‘lim’ from the query string info
+    try {
+        let lim  = parseInt(req.query);
+        db.collection("Pot")
+            .find()
+            // -1 is for descending and 1 is for ascending
+            //.sort({ credits: -1 })
+            // Show only [lim] players
+            .limit(lim)
+            .toArray(function(error,result) {
+
+                console.log(Array.from(result));
+                res.json(result);
+            });
+    } catch (error) {
+        return res.send(error.message);
+    }
+});
+
+/*
+app.get('/api',(req, res) => {
+    res.json({test: "123"});
+});
+*/
+
+//Update player
+app.put("/players", async function(req, res) {
+    let { username, selected, credits } = req.body;
+    // check if the username already exists
+    const alreadyExisting = await db
+        .collection("players")
+        .findOne({ username: username });
+    if (alreadyExisting) {
+        // Update player object with the username
+        await db
+            .collection("players")
+            .updateOne({ username }, { $set: { username, selected, credits } });
+        res.send({ status: true, msg: "Update-> " + username });
+    } else {
+        res.send({ status: false, msg: "player username not found" });
+    }
+});
+
+//Update pot
+app.put("/pot", async function(req, res) {
+    let { username, pot } = req.body;
+    // check if the username already exists
+    //res.redirect("players")
+    const alreadyExisting = await db
+        .collection("Pot")
+        .findOne({ username: username });
+    if (alreadyExisting) {
+        // Update player object with the username
+        await db
+            .collection("Pot")
+            .updateOne({ username }, { $set: { pot } }); //selected
+        // console.log(`Player ${username} credits updated to ${selected}`);
+        res.send({ status: true, msg: "Update-> " + pot });
+    } else {
+        res.send({ status: false, msg: "player username not found" });
+    }
+});
+
+/*
+ * Other fuctions that are not needed in this programm (yet)
+ */
+
+/**
+ *  ChangeStream
+ */
+
+/*
+// listens to changes made on the DB
 // tutorial: https://developer.mongodb.com/quickstart/nodejs-change-streams-triggers
 function closeChangeStream(timeInMs = 6000000, changeStream) {
     return new Promise((resolve) => {
@@ -104,20 +202,17 @@ function closeChangeStream(timeInMs = 6000000, changeStream) {
     })
 };
 
-
 async function monitorListingsUsingEventEmitter(client, timeInMs = 6000000, pipeline = []){
-   
    const collection = client.db("GamePot").collection("players");
    const changeStream = collection.watch(pipeline);
-   
+
    //log every change
    changeStream.on('change', (next) => {
      console.log(next);
 });
-
   await closeChangeStream(timeInMs, changeStream);
-   
 }
+ */
 
 /* Route to create new player
 app.post("/players", async function(req, res) {
@@ -140,6 +235,7 @@ app.post("/players", async function(req, res) {
    }
 });
 */
+
 
 /*
 app.put("/players", async function(req, res) {
@@ -179,93 +275,3 @@ app.delete("/players", async function(req, res) {
 });
  */
 
-// Access the leaderboard
-app.get("/api", async function(req, res) {
-   // retrieve ‘lim’ from the query string info
-   
-   try {
-   let lim  = parseInt(req.query);
-   db.collection("players")
-       .find()
-       // -1 is for descending and 1 is for ascending
-       //.sort({ credits: -1 })
-       // Show only [lim] players
-	   .limit(lim)
-       .toArray(function(error,result) {
-		 
-            console.log(Array.from(result)); 
-			res.json(result);
-		});
-	} catch (error) {
-      
-      return res.send(error.message);
-    }
-});
-
-// Access the leaderboard
-app.get("/pot", async function(req, res) {
-    // retrieve ‘lim’ from the query string info
-
-    try {
-        let lim  = parseInt(req.query);
-        db.collection("Pot")
-            .find()
-            // -1 is for descending and 1 is for ascending
-            //.sort({ credits: -1 })
-            // Show only [lim] players
-            .limit(lim)
-            .toArray(function(error,result) {
-
-                console.log(Array.from(result));
-                res.json(result);
-            });
-    } catch (error) {
-        return res.send(error.message);
-    }
-});
-
-/*
-app.get('/api',(req, res) => {
-    res.json({test: "123"});
-});
-*/
-
-app.put("/players", async function(req, res) {
-    let { username, selected, credits } = req.body;
-    // check if the username already exists
-    //res.redirect("players")
-    const alreadyExisting = await db
-        .collection("players")
-        .findOne({ username: username });
-    if (alreadyExisting) {
-        // Update player object with the username
-        await db
-            .collection("players")
-            .updateOne({ username }, { $set: { username, selected, credits } }); //selected
-        // console.log(`Player ${username} credits updated to ${selected}`);
-        res.send({ status: true, msg: "Update-> " + username });
-    } else {
-        res.send({ status: false, msg: "player username not found" });
-    }
-});
-
-
-app.put("/pot", async function(req, res) {
-
-    let { username, pot } = req.body;
-    // check if the username already exists
-    //res.redirect("players")
-    const alreadyExisting = await db
-        .collection("Pot")
-        .findOne({ username: username });
-    if (alreadyExisting) {
-        // Update player object with the username
-        await db
-            .collection("Pot")
-            .updateOne({ username }, { $set: { pot } }); //selected
-        // console.log(`Player ${username} credits updated to ${selected}`);
-        res.send({ status: true, msg: "Update-> " + pot });
-    } else {
-        res.send({ status: false, msg: "player username not found" });
-    }
-});

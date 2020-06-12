@@ -1,19 +1,17 @@
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
+    document.addEventListener('DOMContentLoaded', ready) //checks if the page has properly loaded, before functions are executed
 } else {
-    ready();  //goes to setMoney
+    ready();
+    getPlayers();
 }
-;
 
 /* -----------------------------------------------------------------------------
    --------------- Function: add new Player ------------------------------------
    -----------------------------------------------------------------------------
  */
 
-getPlayers();
-
 async function getPlayers() {
-    const response = await fetch('/api');
+    const response = await fetch('/api'); // gets data from DB
     const data = await response.json();
 
     for (item of data) {
@@ -24,10 +22,10 @@ async function getPlayers() {
             var newPlayerContent = `
 			<div class="card">
                 <h1 class="playerID">${item.username}</h1>
-                <p id="wallet" class="wallet"> ${item.credits} </p>   <!---------------  credits as int oder string-->
+                <p id="wallet" class="wallet"> ${item.credits} </p>
                 <form id= "set" action="">
                     <input type="text" placeholder="€€€" class="sets" id="sets"/>
-                    <button  class="setBtn" id="setB">Set</button> <!------ disabled = true-->
+                    <button  class="setBtn" id="setB">Set</button>
                 </form>
             </div>`;
             newPlayer.innerHTML = newPlayerContent;
@@ -61,65 +59,42 @@ async function setWallet(b) {
     if (startW.value > 0 && startW.value < 10) {
         alert("Credits have to be over 10")
     } else {
-        const response = await fetch('/api');
+
+        //Update playerCredits
+        const response = await fetch('/api'); // gets the players from DB
         const data = await response.json();
 
         for (item of data) {
             var toSend = item;
-            //console.log(toSend);
             if (toSend.selected === true) {
-
                 toSend.credits = startW.value.toString();
-                console.log(toSend);
-                const options = {
+                const options = {  //defines data send to DB
                     method: 'PUT',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(toSend)
                 };
                 fetch('/players', options); //returns to app.put("/players",... in index.js
             }
-
-
         }
 
-        const responsePot = await fetch('/pot');
+        //Update playerCredits
+        const responsePot = await fetch('/pot'); // gets the pot from DB
         const dataPot = await responsePot.json();
 
         for (item of dataPot) {
             if (item.username === "pot1") {
-                //console.log(item)
                 item.pot = "0";
-                //console.log(dataPot)
                 const options = {
                     method: 'PUT',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(item)
                 };
                 fetch('/pot', options);
-                /*var heading = document.getElementsByClassName('heading')[0];
-                var headingDiv = document.createElement('div');
-                var innerHeading = `
-                        <div> Pot:
-                            <t id="gamePot">${item.pot}</t>
-                        </div>`;
-                headingDiv.innerHTML = innerHeading;
-                console.log(headingDiv);
-                console.log(heading);
-                heading.append(headingDiv);
-
-                 */
             }
         }
-        /*
-        allPlayers = document.getElementsByClassName('card'); //alle Players speichern
-        for (var i = 0; i < allPlayers.length; i++) { // alle Players durchgehen
-            //var wallet = allPlayers[i]; //
-            var wallet = allPlayers[i].querySelector("#wallet"); //wallet eines Players auswählen
-            wallet.innerText = startW.value; //startV zuweisen
-        }
-         */
 
         //Buttons disablen, weil Spiel beginnt
+        /*
         var setBtns = document.getElementsByClassName("setBtn");
         for (var i = 0; i < setBtns.length; i++) {
             //var input = setBtns[i].getElementsByClassName("sets");
@@ -128,6 +103,7 @@ async function setWallet(b) {
         }
         //setWalletBtn.disabled = true;
         splitBtn.disabled = false;
+         */
         startW.value = "";
         location.reload()
     }
@@ -136,15 +112,16 @@ async function setWallet(b) {
 /* -----------------------------------------------------------------------------
    --------------------- Function: set Money -----------------------------------
    -----------------------------------------------------------------------------
-   ToDo: wenn Credits unter 0 abfangen*/
+ */
 
 const gamePot = document.querySelector("#gamePot");
 
 async function ready() {
-
+    //Reloading page every 5 seconds to be see what other players did
     setInterval(function(){ location.reload(); }, 5000);
     //monitorListingsUsingEventEmitter();
 
+    //initiate Pot with 0
     const responsePot = await fetch('/pot');
     const dataPot = await responsePot.json();
 
@@ -157,23 +134,16 @@ async function ready() {
                              <t id="gamePot">${item.pot}</t>
                          </div>`;
             headingDiv.innerHTML = innerHeading;
-            console.log(headingDiv);
-            console.log(heading);
             heading.append(headingDiv);
         }
     }
 
     var setBtns = document.getElementsByClassName("setBtn"); //alle setBtns speichern
-    //console.log(setBtns);
-    //console.log(setBtns.length);
     for (var i = 0; i < setBtns.length; i++) {
-        // alert(setBtns);
-        //var input = setBtns[i].getElementsByClassName("sets");
         var btn = setBtns[i];
         btn.onclick = setMoney; //Funktion aufrufen
     }
-    ;
-};
+}
 
 async function setMoney(e) {
     e.preventDefault();
@@ -181,32 +151,29 @@ async function setMoney(e) {
     const btnCl = e.target; //target, damit nur dieser (geklickte) Button verwendent wird
     const playerCard = btnCl.parentElement.parentElement; //PlayerCard auswählen
     const playerName = playerCard.getElementsByClassName('playerID')[0].innerHTML;
-    console.log(playerName)
+
     const gamePot = document.querySelector("#gamePot");
+
     const setVal = playerCard.getElementsByClassName('sets')[0].value; //input auswählen
     const inVal = parseInt(setVal, 10); //Input-Betrag speichern
+
     var wallet = playerCard.getElementsByClassName('wallet')[0]; //aktuelle Credits speichern
     const Nwallet = parseInt(wallet.innerText, 10) - parseInt(setVal, 10); //Betrag von Credits abziehen
+
     const Npot = parseInt(gamePot.innerText, 10) + inVal; // Betrag zu aktuellen Pot addieren
 
     const response = await fetch('/api');
     const data = await response.json();
+
     const responsePot = await fetch('/pot');
     const dataPot = await responsePot.json();
-    //console.log(dataPot);
+
 
     if (Nwallet <= 0) {
         alert(playerName + " does not have enough money to bet.")
     } else {
-        /*
-		const pot = parseInt(gamePot.innerText, 10) + inVal; // Betrag zu aktuellen Pot addieren
-        gamePot.innerText = pot; // neuen Pot anzeigen
-
-        wallet.innerText = Nwallet; //neue Credits anzeigen
-         */
         for (item of data) {
             if (item.username === playerName) {
-                //console.log(item)
                 item.credits = Nwallet.toString();
                 const options = {
                     method: 'PUT',
@@ -221,7 +188,6 @@ async function setMoney(e) {
             if (item.username === "pot1") {
                 console.log(item)
                 item.pot = Npot.toString();
-                //console.log(dataPot)
                 const options = {
                     method: 'PUT',
                     headers: {'Content-Type': 'application/json'},
@@ -274,14 +240,9 @@ async function splitPot(t) {
         if (Nwallet <= 0) {
             alert(playerName + " does not have enought money to bet.")
         } else {
-
-            // wallet.innerHTML = Nwallet; // neue Credits anzeigen
-            //gamePot.innerText = 0; // Pot wieder auf 00 setzen
-
             const response = await fetch('/api');
             const data = await response.json();
-            const responsePot = await fetch('/pot');
-            const dataPot = await responsePot.json();
+
 
             for (item of data) {
                 if (item.username === playerName) {
@@ -295,13 +256,13 @@ async function splitPot(t) {
                     fetch('/players', options); //returns to app.put("/players",... in index.js
                 }
             }
-            ;
+
+            const responsePot = await fetch('/pot');
+            const dataPot = await responsePot.json();
 
             for (item of dataPot) {
                 if (item.username === "pot1") {
-                    console.log(item)
                     item.pot = Npot;
-                    //console.log(dataPot)
                     const options = {
                         method: 'PUT',
                         headers: {'Content-Type': 'application/json'},
@@ -312,7 +273,7 @@ async function splitPot(t) {
             }
             const uncheck = document.querySelector('input[name="player"]:checked');
             uncheck.checked = false;
-            disabled="false"
+            //disabled="false"
         }
     }
 };
@@ -332,8 +293,6 @@ async function endGame(e) {
 
     const response = await fetch('/api');
     const data = await response.json();
-    const responsePot = await fetch('/pot');
-    const dataPot = await responsePot.json();
 
     for (item of data) {
         item.credits = "0";
@@ -347,11 +306,12 @@ async function endGame(e) {
         fetch('/players', options); //returns to app.put("/players",... in index.js
     }
 
+    const responsePot = await fetch('/pot');
+    const dataPot = await responsePot.json();
+
     for (item of dataPot) {
         if (item.username === "pot1") {
             item.pot = "0";
-            console.log(item.pot)
-            //console.log(dataPot)
             const options = {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
@@ -361,7 +321,6 @@ async function endGame(e) {
         }
     }
 
-    console.log("goToHome")
     //goToHome(e);
     window.location.href = "/home";
 }

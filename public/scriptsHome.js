@@ -2,13 +2,13 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
     ready();
-};
-
+}
 
 let data;
 let response;
 
 getPlayers();
+
 async function getPlayers() {
     response = await fetch('/api');
     data = await response.json();
@@ -34,6 +34,8 @@ async function getPlayers() {
 }
 
 function ready (e) {
+    //setInterval(function(){ location.reload(); }, 5000);
+
     let chooseBtns = document.getElementsByClassName("ChBtn");
     for (var i=0; i < chooseBtns.length; i++) {
         console.log(chooseBtns[i]);
@@ -42,7 +44,7 @@ function ready (e) {
     }
 }
 
-async function selectPlayer (r) {
+function selectPlayer (r) {
     r.preventDefault();
 
     const btnCl = r.target; //target, damit nur dieser (geklickte) Button verwendent wird
